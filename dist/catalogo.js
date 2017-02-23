@@ -116,12 +116,13 @@ app.run(function($rootScope, $state, $stateParams, $window) {
     $rootScope.userService = userService;
 }).run(function(oauth2Service, menuService, $state, $rootScope, $location, authUrl, $window, userService) {
     menuService.menuUrl = "menu.json";
+    menuService.apiMenuUrl = "http://localhost:7001/api/oauth2_backend/usermenu/BACKEND/";
     $rootScope.menu = menuService.getMenu();
     oauth2Service.loginUrl = authUrl + "/o/authorize/";
     oauth2Service.oidcUrl = authUrl + "/api/oauth2_backend/localuserinfo/";
     console.log("location.origin=" + location.origin);
-    oauth2Service.clientId = "RBzvAoW3dtySxnPob5TuQgINV3yITSVE5bevdosI";
-    oauth2Service.scope = "catalogo";
+    oauth2Service.clientId = "9VjxHes4dgYvGAQMC40aZTPQCuycdkRSaTPLZMU4";
+    oauth2Service.scope = "ubigeo";
     $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
         console.log("$stateChangeStart isAauthenticated=" + oauth2Service.isAauthenticated());
         if (toState.loginRequired && !oauth2Service.isAauthenticated()) {
@@ -213,7 +214,7 @@ app.constant("ROUTERS", [ {
             page: "ubigeos"
         },
         templateUrl: "dist/views/ubigeos/index.html",
-        loginRequired: false
+        loginRequired: true
     },
     "ubigeo.ubigeo.ubigeosNew": {
         url: "/cubigeos/new",

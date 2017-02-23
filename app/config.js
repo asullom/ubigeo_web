@@ -178,7 +178,7 @@ app
 .run(function(oauth2Service, menuService, $state, $rootScope, $location, authUrl, $window, userService) {
 
     menuService.menuUrl = "menu.json";
-    //menuService.apiMenuUrl = "http://localhost:7001/api/oauth2_backend/usermenu/";
+    menuService.apiMenuUrl = "http://localhost:7001/api/oauth2_backend/usermenu/BACKEND/";
     $rootScope.menu = menuService.getMenu();
     
     oauth2Service.loginUrl = authUrl + "/o/authorize/";
@@ -188,9 +188,9 @@ app
     console.log("location.origin=" + location.origin);
 
     //oauth2Service.clientId = "cZDXQSFgPUo1095Rsk2VRghzbi9iaMMDDkqUdcFx";//sqlite3 de https://github.com/practian-ioteca-project/ioteca_service
-    oauth2Service.clientId = "RBzvAoW3dtySxnPob5TuQgINV3yITSVE5bevdosI"; //MYSQL
+    oauth2Service.clientId = "9VjxHes4dgYvGAQMC40aZTPQCuycdkRSaTPLZMU4"; //MYSQL
     //oauth2Service.clientId = "RXQ55Y7OqLUibs9eKYdpXtdBm5ZC1gqhArW5Nylm"; //ORA
-    oauth2Service.scope = "catalogo"; //comentar si no está configurado
+    oauth2Service.scope = "ubigeo"; //comentar si no está configurado
 
     //https://github.com/angular-ui/ui-router/wiki
     $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {

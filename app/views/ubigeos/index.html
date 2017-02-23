@@ -55,14 +55,14 @@
                                 <td> {{ d.updated_at | date:'shortDate' }} </td>
                                 <td>
                                     <button class="md-icon-button md-td" aria-label="Edit" ui-sref="catalogo.catalogo.autoresEdit({id:d.id})">
-                                        <md-tooltip >Edit {{ d.codigo }}</md-tooltip>
-                                        <md-icon  size="24" icon="edit" aria-label="Edit"></md-icon>
+                                        <tooltip md-autohide>Edit {{ d.codigo }}</tooltip>
+                                        <icon  size="24" icon="edit" aria-label="Edit"></icon>
                                     </button>
                                 </td>
                                 <td>
                                     <button class="md-icon-button md-td" aria-label="delete" ng-click="delete(d)">
-                                        <md-tooltip >Delete {{ d.codigo }}</md-tooltip>
-                                        <md-icon  size="24" icon="delete" aria-label="delete"></md-icon>
+                                        <tooltip md-autohide>Delete {{ d.codigo }}</tooltip>
+                                        <icon  size="24" icon="delete" aria-label="delete"></icon>
                                     </button>
                                 </td>
                             </tr>

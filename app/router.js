@@ -47,7 +47,7 @@ app.constant('ROUTERS', [
                 "page": "ubigeos"
             },
             "templateUrl": "dist/views/ubigeos/index.html",
-            "loginRequired": false
+            "loginRequired": true
         },
         "ubigeo.ubigeo.ubigeosNew": {
             "url": "/cubigeos/new",
